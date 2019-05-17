@@ -1,0 +1,18 @@
+{
+  "name": "Seamless Google Ratings",
+  "version": "1.0",
+  "description": "See Restaurants' Google Maps Ratings on Seamless Search!",
+  "author": "Rick Zhang",
+  "permissions": [
+    "activeTab",
+    "*://*.seamless.com/search*",
+    "*://maps.googleapis.com/maps/api/place/findplacefromtext/json"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.seamless.com/search*"],
+      "js": ["getRestaurantNames.js"]
+    }
+  ],
+  "manifest_version": 2
+}
