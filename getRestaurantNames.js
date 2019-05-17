@@ -1,3 +1,7 @@
-const selectors = '.u-text-ellipsis';
-const restaurantNames = document.querySelectorAll('.u-text-ellipsis');
-restaurantNames.forEach(function (node) { console.log(node.innerText) });
+window.addEventListener('load', getRestaurantNames, false);
+
+function getRestaurantNames() {
+  const selector = '.u-text-ellipsis';
+  const restaurantNames = document.querySelectorAll(selector);
+  restaurantNames.forEach(function (node) { console.log(node.innerText) });
+}
