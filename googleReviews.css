@@ -9,13 +9,13 @@
   text-shadow: 0px 1px 0 #C5C5C5;
 }
 
-.stars-container {
-  font-size: 20px;
+.content-container {
   width: 80px;
 }
 
 .google-ratings-top {
   color: #ffd700;
+  font-size: 20px;
   padding: 0;
   position: relative;
   z-index: 1;
@@ -25,6 +25,7 @@
 
 .google-ratings-bottom {
   color: #A9A9A9;
+  font-size: 20px;
   padding: 0;
   display: block;
   position: absolute;
@@ -32,4 +33,10 @@
   top: 0;
   z-index: 0;
   opacity: 0.40;
+}
+
+.google-rating-count {
+  color: rgba(0,0,0,.55);
+  font-size: 12px;
+  text-align: center;
 }

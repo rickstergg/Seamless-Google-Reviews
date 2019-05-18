@@ -16,7 +16,7 @@
     {
       "matches": ["*://*.seamless.com/search*"],
       "js": ["getRestaurantNames.js"],
-      "css": ["seamlessReviews.css"]
+      "css": ["googleReviews.css"]
     }
   ],
   "manifest_version": 2
