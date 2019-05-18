@@ -25,7 +25,11 @@ async function getRestaurantNames() {
       userRatingCount,
     } = response;
 
-    const seamlessRatingNode = document.querySelector('.restaurantCard-rating');
-    seamlessRatingNode.parentNode.replaceChild(createGoogleRating(rating * 20, userRatingCount), seamlessRatingNode);
+    if (rating && userRatingCount) {
+      const seamlessRatingNode = document.querySelector('.restaurantCard-rating');
+      seamlessRatingNode.parentNode.replaceChild(createGoogleRating(rating * 20, userRatingCount), seamlessRatingNode); 
+    } else {
+      console.log('Could not replace Seamless goodies for ' + name);
+    }
   });
 }
