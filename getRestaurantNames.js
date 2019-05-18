@@ -6,9 +6,10 @@ async function getRestaurantNames() {
     await new Promise(r => setTimeout(r, 1000));
   }
 
-  const restaurantNames = document.querySelectorAll(selector);
+  let names = [];
+  const nodes = document.querySelectorAll(selector).forEach((node) => names.push(node.innerText));
   
-  chrome.runtime.sendMessage({names: restaurantNames}, function(response) {
-    console.log(response.received);
+  chrome.runtime.sendMessage({names: names}, function(response) {
+    console.log(response);
   });
 }
