@@ -15,7 +15,8 @@
   "content_scripts": [
     {
       "matches": ["*://*.seamless.com/search*"],
-      "js": ["getRestaurantNames.js"]
+      "js": ["getRestaurantNames.js"],
+      "css": ["seamlessReviews.css"]
     }
   ],
   "manifest_version": 2
