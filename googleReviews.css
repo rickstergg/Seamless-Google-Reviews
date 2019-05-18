@@ -1,0 +1,35 @@
+.google-ratings {
+  unicode-bidi: bidi-override;
+  flex-basis: 25%;
+  height: 40px;
+  width: 80px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0;
+  text-shadow: 0px 1px 0 #C5C5C5;
+}
+
+.stars-container {
+  font-size: 20px;
+  width: 80px;
+}
+
+.google-ratings-top {
+  color: #ffd700;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+  display: block;
+  overflow: hidden;
+}
+
+.google-ratings-bottom {
+  color: #A9A9A9;
+  padding: 0;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  opacity: 0.40;
+}
