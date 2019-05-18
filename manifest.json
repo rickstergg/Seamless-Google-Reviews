@@ -8,6 +8,10 @@
     "*://*.seamless.com/search*",
     "*://maps.googleapis.com/maps/api/place/findplacefromtext/json"
   ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
   "content_scripts": [
     {
       "matches": ["*://*.seamless.com/search*"],

@@ -7,5 +7,8 @@ async function getRestaurantNames() {
   }
 
   const restaurantNames = document.querySelectorAll(selector);
-  restaurantNames.forEach(function (node) { console.log(node.innerText) });
+  
+  chrome.runtime.sendMessage({names: restaurantNames}, function(response) {
+    console.log(response.received);
+  });
 }
