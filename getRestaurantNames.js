@@ -4,7 +4,7 @@ function createGoogleRating(percentage, userRatingCount) {
   let node = document.createElement('div');
   node.className = 'google-ratings';
 
-  node.innerHTML = '<div class="content-container"><div class="google-ratings-top" style="width: ' + percentage + '%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><div class="google-ratings-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><div class="google-rating-count">' + userRatingCount + ' ratings</div></div>';
+  node.innerHTML = '<div class="content-container"><div class="google-ratings-top" style="width: ' + percentage + '%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><div class="google-ratings-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><div class="google-rating-count">' + userRatingCount + ' G ratings</div></div>';
 
   return node;
 }
