@@ -26,8 +26,10 @@ async function getRestaurantNames() {
 
   let names = [];
   const nodes = document.querySelectorAll(restaurantNameSelector).forEach((node) => names.push(node.innerText));
-  
+
   chrome.runtime.sendMessage({ names: names }, (response) => {
+    console.log(response);
+
     const {
       name,
       rating,
@@ -36,7 +38,7 @@ async function getRestaurantNames() {
 
     if (rating && userRatingCount) {
       const seamlessRatingNode = document.querySelector('.restaurantCard-rating');
-      seamlessRatingNode.parentNode.replaceChild(createGoogleRating(rating * 20, userRatingCount), seamlessRatingNode); 
+      seamlessRatingNode.parentNode.replaceChild(createGoogleRating(rating * 20, userRatingCount), seamlessRatingNode);
     } else {
       console.log('Could not replace Seamless goodies for ' + name);
     }
