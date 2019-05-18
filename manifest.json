@@ -6,7 +6,7 @@
   "permissions": [
     "activeTab",
     "*://*.seamless.com/search*",
-    "*://maps.googleapis.com/maps/api/place/findplacefromtext/json"
+    "*://maps.googleapis.com/maps/api/place/findplacefromtext/json*"
   ],
   "background": {
     "scripts": ["background.js"],
