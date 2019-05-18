@@ -9,7 +9,7 @@ chrome.runtime.onMessage.addListener(
           sendResponse({
             name: request.names[0],
             rating: parsedJSON.candidates[0].rating,
-            userRatings: parsedJSON.candidates[0].user_ratings_total,
+            userRatingCount: parsedJSON.candidates[0].user_ratings_total,
           });
         } else {
           sendResponse({
