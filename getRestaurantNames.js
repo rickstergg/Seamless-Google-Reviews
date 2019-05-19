@@ -19,28 +19,29 @@ createGoogleRating = (percentage, userRatingCount) => {
 }
 
 async function getRestaurantNames() {
-  const restaurantNameSelector = '.u-text-ellipsis';
+  const restaurantNameSelector = 'h5.u-text-ellipsis';
   while(!document.querySelector(restaurantNameSelector)) {
     await new Promise(r => setTimeout(r, 1000));
   }
 
   let names = [];
-  const nodes = document.querySelectorAll(restaurantNameSelector).forEach((node) => names.push(node.innerText));
+  document.querySelectorAll(restaurantNameSelector).forEach((node) => names.push(node.innerText));
 
-  chrome.runtime.sendMessage({ names: names }, (response) => {
-    console.log(response);
+  chrome.runtime.sendMessage({ names }, (resp) => {
+    document.querySelectorAll('.restaurantCard-rating').forEach((node, index) => {
+      if (resp.api[index] && !resp.api[index].error) {
+        const {
+          rating,
+          userRatingCount,
+        } = resp.api[index];
 
-    const {
-      name,
-      rating,
-      userRatingCount,
-    } = response;
-
-    if (rating && userRatingCount) {
-      const seamlessRatingNode = document.querySelector('.restaurantCard-rating');
-      seamlessRatingNode.parentNode.replaceChild(createGoogleRating(rating * 20, userRatingCount), seamlessRatingNode);
-    } else {
-      console.log('Could not replace Seamless goodies for ' + name);
-    }
+        node.parentNode.replaceChild(
+          createGoogleRating(rating * 20, userRatingCount),
+          node
+        );
+      } else {
+        console.log('Could not replace ', names[index]);
+      }
+    });
   });
 }
