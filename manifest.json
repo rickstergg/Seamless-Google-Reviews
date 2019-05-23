@@ -5,12 +5,13 @@
   "author": "Rick Zhang",
   "permissions": [
     "webRequest",
-    "activeTab",
     "*://*.seamless.com/search*",
+    "*://api-gtm.grubhub.com/restaurants/search*",
     "*://maps.googleapis.com/maps/api/place/findplacefromtext/json*"
   ],
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["background.js"],
+    "persistent": true
   },
   "content_scripts": [
     {

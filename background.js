@@ -31,12 +31,19 @@ chrome.runtime.onMessage.addListener(
   }
 );
 
-chrome.webRequest.onCompleted.addListener(function(details) {
-  // console.log("Completed: " + details.url);
+chrome.webRequest.onCompleted.addListener(
+  function(details) {
+  console.log(details.url);
   // chrome.tabs.executeScript({
   //   file: 'content.js'
   // });
-}, { urls: ["*://*.seamless.com/search*"]}, types: ["xmlhttprequests"] );
+  },
+  {
+    urls: ["*://*.seamless.com/search*", "*://api-gtm.grubhub.com/restaurants/search*"],
+    types: ['xmlhttprequest']
+  }
+);
+
 
 makeRequest = (url) => {
   return new Promise((resolve, reject) => {
