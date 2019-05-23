@@ -1,5 +1,3 @@
-window.addEventListener('load', getRestaurantNames, false);
-
 createGoogleRating = (percentage, userRatingCount) => {
   let node = document.createElement('div');
   node.className = 'google-ratings';
@@ -45,3 +43,5 @@ async function getRestaurantNames() {
     });
   });
 }
+
+getRestaurantNames();

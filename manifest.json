@@ -4,6 +4,7 @@
   "description": "See Restaurants' Google Maps Ratings on Seamless Search!",
   "author": "Rick Zhang",
   "permissions": [
+    "activeTab",
     "webRequest",
     "*://*.seamless.com/search*",
     "*://api-gtm.grubhub.com/restaurants/search*",
