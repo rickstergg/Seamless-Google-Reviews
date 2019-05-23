@@ -33,10 +33,9 @@ chrome.runtime.onMessage.addListener(
 
 chrome.webRequest.onCompleted.addListener(
   function(details) {
-  console.log(details.url);
-  // chrome.tabs.executeScript({
-  //   file: 'content.js'
-  // });
+    chrome.tabs.executeScript({
+      file: 'content.js'
+    });
   },
   {
     urls: ["*://*.seamless.com/search*", "*://api-gtm.grubhub.com/restaurants/search*"],
