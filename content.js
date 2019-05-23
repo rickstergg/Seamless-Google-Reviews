@@ -27,7 +27,7 @@ async function getRestaurantNames() {
   let names = [];
   document.querySelectorAll(restaurantNameSelector).forEach((node) => names.push(node.innerText));
 
-  chrome.runtime.sendMessage({ names }, (resp) => {
+  chrome.runtime.sendMessage({ names, message: 'getRestaurantNames' }, (resp) => {
     document.querySelectorAll('.restaurantCard-rating').forEach((node, index) => {
       if (resp.api[index] && !resp.api[index].error) {
         const {
