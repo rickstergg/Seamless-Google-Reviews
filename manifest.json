@@ -16,7 +16,6 @@
   "content_scripts": [
     {
       "matches": ["*://*.seamless.com/search*"],
-      "js": ["content.js"],
       "css": ["googleReviews.css"]
     }
   ],
