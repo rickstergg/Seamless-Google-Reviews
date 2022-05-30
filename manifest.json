@@ -6,19 +6,22 @@
   "permissions": [
     "activeTab",
     "webRequest",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
     "*://*.seamless.com/search*",
     "*://api-gtm.grubhub.com/restaurants/search*",
     "*://maps.googleapis.com/maps/api/place/findplacefromtext/json*"
   ],
   "background": {
-    "scripts": ["background.js"],
-    "persistent": true
+    "service_worker": "background.js"
   },
   "content_scripts": [
     {
-      "matches": ["*://*.seamless.com/search*"],
+      "matches": ["https://www.seamless.com/search*"],
       "css": ["googleReviews.css"]
     }
   ],
-  "manifest_version": 2
+  "manifest_version": 3
 }
